@@ -24,19 +24,28 @@ export function Navbar() {
         <NavigationMenu>
           <NavigationMenuList className="flex space-x-4">
             <NavigationMenuItem>
-              <NavigationMenuLink href="/home" className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
+              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
+    Home</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/skills" className={navigationMenuTriggerStyle()}>Skills</NavigationMenuLink>
+              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
+    Skills
+</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/projects" className={navigationMenuTriggerStyle()}>Projects</NavigationMenuLink>
+              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
+    Projects
+</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/about" className={navigationMenuTriggerStyle()}>About me</NavigationMenuLink>
+              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
+    About me
+</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/contact" className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
+              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
+    Contact
+</NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
