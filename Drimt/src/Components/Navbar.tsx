@@ -33,7 +33,7 @@ export function Navbar() {
 </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
+              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl font-chewy`}>
     Projects
 </NavigationMenuLink>
             </NavigationMenuItem>
