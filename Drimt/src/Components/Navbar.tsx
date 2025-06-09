@@ -1,13 +1,13 @@
 import React from 'react';
 import drimt from '../assets/logo2.png';
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './ui/navigation-menu';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'; // Import Sheet components
-import { Button } from './ui/button'; // Import Button component
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './Navbar/navigation-menu';
+import { Sheet, SheetContent, SheetTrigger } from './Navbar/sheet'; // Import Sheet components
+import { Button } from './Navbar/button'; // Import Button component
 import { MenuIcon } from 'lucide-react'; // Import a hamburger icon
 
 export function Navbar() {
   return (
-    <nav className="flex items-center justify-between p-4 border-b">
+    <nav className="flex items-center justify-between p-4 border-b ">
       {/* Logo Section (always visible) */}
       <div className="flex items-center">
         <a href="/"> {/* Wrap logo in a link to homepage */}
@@ -42,13 +42,22 @@ export function Navbar() {
     About me
 </NavigationMenuLink>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
-    Contact
-</NavigationMenuLink>
-            </NavigationMenuItem>
+           
           </NavigationMenuList>
-        </NavigationMenu>
+              </NavigationMenu>
+            <Button
+      variant="outline"
+      className="
+        px-10 py-5 rounded-full
+        bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8] 
+        text-white 
+        border-none
+        text-[18px]
+        cursor-pointer
+      "
+    >
+      Connect with me
+    </Button>
       </div>
 
       {/* Mobile Navigation (visible on small screens) */}
