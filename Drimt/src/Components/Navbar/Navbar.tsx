@@ -1,8 +1,8 @@
 import React from 'react';
 import drimt from '../assets/logo2.png';
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './Navbar/navigation-menu';
-import { Sheet, SheetContent, SheetTrigger } from './Navbar/sheet'; // Import Sheet components
-import { Button } from './Navbar/button'; // Import Button component
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './navigation-menu';
+import { Sheet, SheetContent, SheetTrigger } from './sheet'; // Import Sheet components
+import { Button } from './button'; // Import Button component
 import { MenuIcon } from 'lucide-react'; // Import a hamburger icon
 
 export function Navbar() {
