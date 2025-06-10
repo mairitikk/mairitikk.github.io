@@ -119,3 +119,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.text-gradient-logo {
+  background: linear-gradient(270deg, #D5DAE3 10%, #3A3AF8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* For WebKit browsers like Chrome, Safari */
+  -webkit-text-fill-color: transparent;
+  /* For WebKit browsers */
+  color: transparent;
+  /* Fallback for other browsers (though -webkit-text-fill-color is widely supported) */
+}
