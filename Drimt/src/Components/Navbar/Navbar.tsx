@@ -51,6 +51,7 @@ export function Navbar() {
         px-10 py-5 rounded-full
         bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8] 
         text-white 
+        hover:text-[#3A3AF8] 
         border-none
         text-[18px]
         cursor-pointer
