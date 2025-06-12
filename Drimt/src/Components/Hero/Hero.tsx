@@ -5,34 +5,34 @@ import { Button } from '../Navbar/button'
 const Hero = () => {
   return (
     <div className='
-      flex flex-col items-center gap-6  /* Smaller default gap */
-      px-4 sm:px-6 md:px-8 lg:px-12    /* Horizontal padding for smaller screens */
-      text-center                      /* Center text for better flow on small screens */
+      flex flex-col items-center gap-6  
+      px-4 sm:px-6 md:px-8 lg:px-12    
+      text-center                    
     '>
       {/* Profile Image */}
-      <img
-        src={profile_img}
-        alt="Mairi Tikk"
-        className="
-          mt-24 sm:mt-32 md:mt-40      /* Responsive top margin */
-          rounded-full bg-blue-200 p-2
-          w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 /* Responsive image size */
-          object-cover                  /* Ensures image covers the area without distortion */
-        "
-      />
+    <img
+  src={profile_img}
+  alt="Mairi Tikk"
+  className="
+    mt-8 sm:mt-12 md:mt-16 /* (Keeping the smaller margins from our last discussion) */
+    rounded-full bg-blue-200 p-2
+    w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-80 xl:h-80 /* Increased sizes */
+    object-cover
+  "
+/>
 
       {/* Heading */}
       <h1 className='
         chewy-regular
-        text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl /* Responsive font size */
+        text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
         font-semibold
-        max-w-4xl                       /* Max width to prevent it from getting too wide */
-        leading-tight sm:leading-snug md:leading-normal /* Responsive line height */
+        max-w-4xl                       
+        leading-tight sm:leading-snug md:leading-normal 
       '>
         <span className="
           text-gradient-logo
-          block                     /* Make the span a block to handle text wrapping better */
-          text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl /* Responsive font size for gradient part */
+          block                     /
+          text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
           font-semibold
         ">
           I'm Mairi Tikk
@@ -42,32 +42,32 @@ const Hero = () => {
 
       {/* Paragraph */}
       <p className='
-        max-w-2xl                       /* Max width for readability */
-        text-base sm:text-lg md:text-xl lg:text-2xl /* Responsive font size */
-        leading-normal sm:leading-relaxed md:leading-loose /* Responsive line height */
-        mb-8 sm:mb-10 md:mb-12          /* Responsive bottom margin */
+        max-w-2xl                    
+        text-base sm:text-lg md:text-xl lg:text-2xl 
+        leading-normal sm:leading-relaxed md:leading-loose 
+        mb-8 sm:mb-10 md:mb-12          
       '>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, tenetur possimus sapiente suscipit eos excepturi explicabo! Cupiditate nisi veritatis, distinctio rerum magnam soluta reprehenderit officiis repellat temporibus facilis, corporis sed.
       </p>
 
       {/* Buttons Container */}
       <div className="
-        flex flex-col sm:flex-row     /* Stack vertically on small screens, row on larger */
-        items-center gap-4 sm:gap-6 md:gap-8 /* Responsive gap between buttons */
-        text-lg sm:text-xl md:text-2xl font-medium /* Responsive text size for the container, influences children */
-        mb-12 sm:mb-16 md:mb-20          /* Responsive bottom margin for the whole section */
+        flex flex-col sm:flex-row     
+        items-center gap-4 sm:gap-6 md:gap-8 
+        text-lg sm:text-xl md:text-2xl font-medium 
+        mb-12 sm:mb-16 md:mb-20         
       ">
         {/* Connect with me button */}
         <Button
           className="
-            px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 /* Responsive padding */
+            px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 
             rounded-full
             bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8]
             text-white hover:text-[#3A3AF8]
             border-none
-            text-base sm:text-lg md:text-[18px] /* Responsive font size */
+            text-base sm:text-lg md:text-[18px] 
             cursor-pointer
-            w-full sm:w-auto                 /* Full width on small screens, auto on larger */
+            w-full sm:w-auto                 
           "
         >
           Connect with me
