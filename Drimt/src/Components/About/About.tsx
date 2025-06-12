@@ -1,13 +1,15 @@
 import React from 'react'
-import theme_pattern from '../../assets/theme_pattern.svg'
+import theme_pattern from '../../assets/theme_pattern4.png'
 import profile_img from '../../assets/profile_img.svg'
 const About = () => {
     return (
       //about me 
     <div className="flex flex-col items-center justify-center gap-20 mt-20 mb-20 ml-[170px] mr-[170px]">
-          <div className="about-title">
-              <h1>About me</h1>
-              <img src={ theme_pattern} alt="" />
+          <div className="relative">
+              <h1 className='px-[30px] text-[80px] font-semibold'>About me</h1>
+              <img src={theme_pattern}
+    alt="Decorative pattern" className=' absolute bottom-[-5px] right-0 z-[-1] w-full h-28 object-cover'
+  />
           </div>
           <div className="about-sections">
               <div className="about-left">

@@ -35,9 +35,9 @@ const Hero = () => {
           text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
           font-semibold
         ">
-          I'm Mairi Tikk
+          I'm Mairi Tikk,
         </span>
-        , web developer based in Germany
+        web developer based in Germany
       </h1>
 
       {/* Paragraph */}
