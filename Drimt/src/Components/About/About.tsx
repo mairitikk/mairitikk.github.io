@@ -11,29 +11,29 @@ const About = () => {
     alt="Decorative pattern" className=' absolute bottom-[-5px] right-0 z-[-1] w-full h-28 object-cover'
   />
           </div>
-          <div className="about-sections">
+          <div className="flex gap-5">
               <div className="about-left">
                   <img src={profile_img} alt="" />
               </div>
-              <div className="about-right">
-                  <div className="about-para">
+              <div className="flex flex-col gap-10">
+                  <div className="flex flex-col gap-20 text-[24px] font-medium">
                       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, excepturi iste. Quae consequuntur aperiam harum facilis non alias labore, sed tenetur placeat nam asperiores dignissimos dicta, expedita consectetur natus fuga.</p>
                       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A facilis nisi facere, sequi molestiae soluta inventore dolores laudantium quisquam velit nemo culpa libero doloribus, quia nam ducimus dolor ad. Eligendi!</p>
                   </div>
-                  <div className="about-skills">
-                      <div className="about-skill">
+                  <div className="flex flex-col gap-5">
+                      <div className="flex gap-[50px] items-center transition-all duration-300">
                           <p>HTML & CSS</p>
                           <hr className= "w-1/2" />
                       </div>
-                      <div className="about-skill">
+                      <div className="flex gap-[50px] items-center transition-all duration-300">
                           <p>React JS</p>
                           <hr className= "w-[70%] mx-auto"  />
                       </div>
-                      <div className="about-skill">
+                      <div className="flex gap-[50px] items-center transition-all duration-300">
                           <p>JavaScript</p>
                           <hr className= "w-[60%] mx-auto"  />
                       </div>
-                      <div className="about-skill">
+                      <div className="flex gap-[50px] items-center transition-all duration-300">
                           <p>TypeScript</p>
                           <hr className= "w-1/2" />
                       </div>
