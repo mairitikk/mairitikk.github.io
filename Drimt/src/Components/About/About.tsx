@@ -2,8 +2,9 @@ import React from 'react'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import profile_img from '../../assets/profile_img.svg'
 const About = () => {
-  return (
-    <div>
+    return (
+      //about me 
+    <div className="flex flex-col items-center justify-center gap-20 mt-20 mb-20 ml-[170px] mr-[170px]">
           <div className="about-title">
               <h1>About me</h1>
               <img src={ theme_pattern} alt="" />
@@ -35,6 +36,22 @@ const About = () => {
                           <hr className= "w-1/2" />
                       </div>
                   </div>
+              </div>
+          </div>
+          <div className="about-achievments">
+              <div className="about-achievement">
+                  <h1>10+</h1>
+                  <p>YEARS OF EXPERIENCE</p>
+              </div>
+              <hr />
+               <div className="about-achievement">
+                  <h1>90+</h1>
+                  <p>PROJECTS COMPLETED</p>
+              </div>
+              <hr />
+               <div className="about-achievement">
+                  <h1>15+</h1>
+                  <p>HAPPY CLIENTS</p>
               </div>
           </div>
     </div>
