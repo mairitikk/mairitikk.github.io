@@ -37,7 +37,7 @@ const Hero = () => {
         ">
           I'm Mairi Tikk,
         </span>
-        web developer based in Germany
+        junior-web developer based in Germany
       </h1>
 
       {/* Paragraph */}
