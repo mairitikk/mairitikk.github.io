@@ -136,3 +136,10 @@
   color: transparent;
   /* Fallback for other browsers (though -webkit-text-fill-color is widely supported) */
 }
+.text-gradient-logo2 {
+  background: linear-gradient(270deg, #B0C4DE 50.41%, #3A3AF8 90.25%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
