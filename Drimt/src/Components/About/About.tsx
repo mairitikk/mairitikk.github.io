@@ -11,7 +11,7 @@ const About = () => {
     alt="Decorative pattern" className=' absolute bottom-[-5px] right-0 z-[-1] w-full h-28 object-cover'
   />
           </div>
-          <div className="flex gap-5">
+          <div className="flex gap-10">
               <div className="about-left">
                   <img src={profile_img} alt="" />
               </div>
@@ -21,19 +21,19 @@ const About = () => {
                       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A facilis nisi facere, sequi molestiae soluta inventore dolores laudantium quisquam velit nemo culpa libero doloribus, quia nam ducimus dolor ad. Eligendi!</p>
                   </div>
           <div className="flex flex-col gap-5">
-  <div className="flex gap-4 items-center transition-all duration-300">
-    <p className='min-w-[150px] text-2xl font-medium'>HTML & CSS</p>
-    <hr className="outline-none border-none w-1/2 h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8]" /> 
-  </div>
-  <div className="flex gap-4 items-center transition-all duration-300">
+  <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
+  <p className='min-w-[150px] text-2xl font-medium'>HTML & CSS</p>
+  <hr className="outline-none border-none w-1/2 h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8]" />
+</div>
+  <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
     <p className='min-w-[150px] text-2xl font-medium'>React JS</p>
     <hr className="outline-none border-none w-[70%] h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8]" /> 
   </div>
-  <div className="flex gap-4 items-center transition-all duration-300">
+  <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
     <p className='min-w-[150px] text-2xl font-medium'>JavaScript</p>
     <hr className="outline-none border-none w-[60%] h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8]" /> 
   </div>
-  <div className="flex gap-4 items-center transition-all duration-300">
+  <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
     <p className='min-w-[150px] text-2xl font-medium'>TypeScript</p>
     <hr className="outline-none border-none w-1/2 h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8]" /> 
   </div>
@@ -43,17 +43,17 @@ const About = () => {
           <div className="flex w-full justify-around mb-20">
               <div className="flex flex-col items-center gap-[10px] transition-all duration-500">
                   <h1 className="text-[60px] font-bold text-gradient-logo2">10+</h1>
-                  <p>YEARS OF EXPERIENCE</p>
+                  <p className='text-[22px] font-medium'>YEARS OF EXPERIENCE</p>
               </div>
               <hr />
                <div className="flex flex-col items-center gap-[10px] transition-all duration-500">
                   <h1 className="text-[60px] font-bold text-gradient-logo2">90+</h1>
-                  <p>PROJECTS COMPLETED</p>
+                  <p className='text-[22px] font-medium'>PROJECTS COMPLETED</p>
               </div>
               <hr />
                <div className="flex flex-col items-center gap-[10px] transition-all duration-500">
                   <h1 className="text-[60px] font-bold text-gradient-logo2">15+</h1>
-                  <p>HAPPY CLIENTS</p>
+                  <p className='text-[22px] font-medium'>HAPPY CLIENTS</p>
               </div>
           </div>
     </div>
