@@ -14,9 +14,9 @@ const Hero = () => {
   src={profile_img}
   alt="Mairi Tikk"
   className="
-    mt-8 sm:mt-12 md:mt-16 /* (Keeping the smaller margins from our last discussion) */
+    mt-8 sm:mt-12 md:mt-16 
     rounded-full bg-blue-200 p-2
-    w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-80 xl:h-80 /* Increased sizes */
+    w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-80 xl:h-80 
     object-cover
   "
 />
