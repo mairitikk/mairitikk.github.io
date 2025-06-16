@@ -29,22 +29,22 @@ const About = () => {
           <div className="flex flex-col gap-4 lg:gap-5">
   <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
     <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>HTML & CSS</p>
-    {/* Removed flex-grow and used responsive width classes */}
+  
     <hr className="outline-none border-none h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8] w-1/2 sm:w-[50%]" />
   </div>
   <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
     <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>React JS</p>
-    {/* Removed flex-grow and used responsive width classes */}
+    
     <hr className="outline-none border-none h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8] w-[70%] sm:w-[70%]" />
   </div>
   <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
     <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>JavaScript</p>
-    {/* Removed flex-grow and used responsive width classes */}
+  
     <hr className="outline-none border-none h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8] w-[60%] sm:w-[60%]" />
   </div>
   <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
     <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>TypeScript</p>
-    {/* Removed flex-grow and used responsive width classes */}
+    
     <hr className="outline-none border-none h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8] w-1/2 sm:w-[50%]" />
   </div>
 </div>

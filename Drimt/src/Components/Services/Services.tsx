@@ -1,5 +1,5 @@
 import React from 'react'
-import theme_pattern from '../../assets/theme_pattern.svg'
+import theme_pattern from '../../assets/theme_pattern4.png'
 import Services_Data from '../../assets/services_data.js'
 import arrow_icon from '../../assets/arrow_icon.svg'
 import {Button} from '../Navbar/button'
@@ -14,13 +14,17 @@ import {
 } from "../Services/card.tsx"
 
 
+
 const Services = () => {
  return (
-    <div className='container mx-auto py-12 px-4'> {/* Added container and padding for better layout */}
-      <div className='flex flex-col items-center mb-10'> {/* Centering title and image */}
-        <h1 className='text-5xl font-bold text-center mb-4'>My Services</h1>
-        {/* Make sure theme_pattern is correctly imported or replace with actual image */}
-        {theme_pattern && <img src={theme_pattern} alt="Theme Pattern" className='w-48' />}
+    <div className='container mx-auto py-12 px-4'> 
+        <div className="relative flex flex-col items-center mb-10">
+        <h1 className='px-4 text-4xl sm:text-6xl lg:text-8xl font-semibold text-center'>My Services</h1>
+        <img
+          src={theme_pattern}
+          alt="Decorative pattern"
+          className='absolute bottom-[-5px] right-0 z-[-1] w-full h-16 sm:h-20 lg:h-28 object-cover'
+        />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {/* Responsive grid layout */}
