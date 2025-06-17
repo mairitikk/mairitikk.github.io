@@ -19,49 +19,49 @@ export function Navbar() {
         </a>
       </div>
 
-      <div className="hidden md:flex"> 
-        <NavigationMenu>
-          <NavigationMenuList className="flex space-x-4">
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
-    Home</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
-    Skills
-</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl font-chewy`}>
-    Projects
-</NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl`}>
-    About me
-</NavigationMenuLink>
-            </NavigationMenuItem>
-           
-          </NavigationMenuList>
-              </NavigationMenu>
-            <Button
-      variant="outline"
-      className="
-        px-10 py-5 rounded-full
-        bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8] 
-        text-white 
-        hover:text-[#3A3AF8] 
-        border-none
-        text-[18px]
-        cursor-pointer
-      "
-    >
-      Connect with me
-    </Button>
-      </div>
+     <div className="hidden md:flex">
+  <NavigationMenu>
+    <NavigationMenuList className="flex space-x-4">
+      <NavigationMenuItem>
+        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl`}>
+          Home
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl`}>
+          Skills
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl font-chewy`}>
+          Projects
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem>
+        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl`}>
+          About me
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+    </NavigationMenuList>
+  </NavigationMenu>
+  <Button
+    variant="outline"
+    className="
+      px-10 py-5 rounded-full
+      bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8]
+      text-white
+      hover:text-[#3A3AF8]
+      border-none
+      text-[18px] /* Consider making this responsive too, e.g., text-lg lg:text-xl */
+      cursor-pointer
+    "
+  >
+    Connect with me
+  </Button>
+</div>
 
-      {/* Mobile Navigation (visible on small screens) */}
-      <div className="md:hidden"> {/* Show on small, hide on medium+ */}
+     
+      <div className="md:hidden"> 
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
