@@ -27,20 +27,20 @@ const Services = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> {/* Responsive grid layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
         {Services_Data.map((service, index) => (
-          <Card key={index} className='p-6 flex flex-col justify-between h-full'> {/* Added padding and styling */}
-            <CardHeader className='pb-4'> {/* Reduced padding below header */}
+          <Card key={index} className='p-6 flex flex-col justify-between h-full'> 
+            <CardHeader className='pb-4'> 
               <CardDescription className='text-lg font-semibold text-gray-500 mb-2'>{service.s_no}</CardDescription>
-              <CardTitle className='text-3xl font-bold text-purple-500'>{service.s_name}</CardTitle> {/* Styled like the image */}
+              <CardTitle className='text-3xl font-bold text-purple-500'>{service.s_name}</CardTitle> 
             </CardHeader>
-            <CardContent className='flex-grow'> {/* Allows content to grow */}
+            <CardContent className='flex-grow'> 
               <p className='text-gray-700'>{service.s_desc}</p>
             </CardContent>
-            <CardFooter className='pt-4 flex justify-end items-center'> {/* Aligns read more to the right */}
+            <CardFooter className='pt-4 flex justify-end items-center'> 
               <Button variant="link" className='text-purple-600 hover:underline flex items-center space-x-2 p-0 h-auto'>
                 <p>Read More</p>
-                {/* Make sure arrow_icon is correctly imported or replace with actual image */}
+             
                 {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-4 h-4 ml-1' />}
               </Button>
             </CardFooter>
