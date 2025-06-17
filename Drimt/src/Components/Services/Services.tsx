@@ -29,7 +29,7 @@ const Services = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
         {Services_Data.map((service, index) => (
-          <Card key={index} className='p-6 flex flex-col justify-between h-full'> 
+          <Card key={index} className='p-6 flex flex-col justify-between h-full bg-blue-100'> 
             <CardHeader className='pb-4'> 
               <CardDescription className='text-lg font-semibold text-gray-500 mb-2'>{service.s_no}</CardDescription>
               <CardTitle className='text-3xl font-bold text-purple-500'>{service.s_name}</CardTitle> 
