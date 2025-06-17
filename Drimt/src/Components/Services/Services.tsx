@@ -17,8 +17,8 @@ import {
 
 const Services = () => {
  return (
-    <div className='container mx-auto py-12 px-4'> 
-        <div className="relative flex flex-col items-center mb-10">
+   <div className="flex flex-col items-center justify-center gap-10 lg:gap-20 mt-10 mb-10 mx-5 sm:mx-10 lg:mx-[170px]">
+      <div className="relative flex flex-col items-center mb-10">
         <h1 className='px-4 text-4xl sm:text-6xl lg:text-8xl font-semibold text-center'>My Services</h1>
         <img
           src={theme_pattern}
@@ -48,10 +48,10 @@ const Services = () => {
             </CardContent>
             <CardFooter className='pt-4 flex justify-end items-center'>
               <Button variant="link" className='text-[#3A3AF8] hover:underline flex items-center space-x-2 p-0 h-auto'>
-                {/* Read More Text */}
-                <p className='text-base sm:text-lg'>Read More</p>
-                {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-4 h-4 ml-1' />}
-              </Button>
+  {/* Read More Text */}
+  <p className='text-base sm:text-lg'>Read More</p>
+  {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-6 h-6 ml-1' />}
+</Button>
             </CardFooter>
           </Card>
         ))}
