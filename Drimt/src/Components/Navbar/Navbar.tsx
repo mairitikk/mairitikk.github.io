@@ -1,16 +1,16 @@
 import React from 'react';
 import drimt from '../../assets/logo2.png'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './navigation-menu';
-import { Sheet, SheetContent, SheetTrigger } from './sheet'; // Import Sheet components
-import { Button } from './button'; // Import Button component
-import { MenuIcon } from 'lucide-react'; // Import a hamburger icon
+import { Sheet, SheetContent, SheetTrigger } from './sheet'; 
+import { Button } from './button'; 
+import { MenuIcon } from 'lucide-react'; 
 
 export function Navbar() {
   return (
     <nav className="flex items-center justify-between p-4 border-b ">
-      {/* Logo Section (always visible) */}
+     
       <div className="flex items-center">
-        <a href="/"> {/* Wrap logo in a link to homepage */}
+        <a href="/"> 
           <img
             src={drimt}
             alt="DriMt Logo"
@@ -19,8 +19,7 @@ export function Navbar() {
         </a>
       </div>
 
-      {/* Desktop Navigation (visible on md and larger screens) */}
-      <div className="hidden md:flex"> {/* Hide on small, show on medium+ */}
+      <div className="hidden md:flex"> 
         <NavigationMenu>
           <NavigationMenuList className="flex space-x-4">
             <NavigationMenuItem>
