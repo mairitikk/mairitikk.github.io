@@ -29,13 +29,13 @@ const Services = () => {
 
      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {Services_Data.map((service, index) => (
-          <Card key={index} className='p-6 flex flex-col justify-between h-full bg-blue-100'>
+          <Card key={index}   className='p-6 flex flex-col justify-between h-full bg-blue-100 border-2 border-transparent rounded-lg transition-all duration-400 ease-in-out hover:scale-105 hover:border-[#3A3AF8] hover:bg-gradient-to-br from-[#2A2A98] to-[#3A3AF8]'>
             <CardHeader className='pb-4'>
-              {/* Service Number (e.g., "01") */}
+            
               <CardDescription className='text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-500 mb-2'>
                 {service.s_no}
               </CardDescription>
-              {/* Service Name (e.g., "Web design") */}
+             
               <CardTitle className='text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3A3AF8]'>
                 {service.s_name}
               </CardTitle>
