@@ -3,15 +3,7 @@ import theme_pattern from '../../assets/theme_pattern4.png'
 import mywork_data from '../../assets/mywork_data.js'
 import arrow_icon from '../../assets/arrow_icon.svg'
 import {Button} from '../Navbar/button'
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../Services/card.tsx"
+import {Card} from "../Services/card.tsx"
 
 
 
@@ -47,7 +39,7 @@ const MyWork = () => {
 
   {/* Single "Show More" Button for the entire section */}
   <div className="flex justify-center mt-8"> {/* Centering the button below the grid */}
-    <Button variant="link" className='text-[#3A3AF8] hover:underline flex items-center space-x-2 p-0 h-auto text-lg sm:text-xl'>
+    <Button variant="outline" className='text-[#3A3AF8] hover:underline flex items-center space-x-2 p-0 h-auto text-lg sm:text-xl'>
       <p>Show More</p>
       {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-6 h-6 ml-1' />}
     </Button>
