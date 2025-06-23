@@ -27,24 +27,32 @@ const MyWork = () => {
         />
       </div>
 
-     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {mywork_data.map((work, index) => (
-          <Card key={index}   className='p-6 flex flex-col justify-between h-full bg-blue-100 border-2 border-transparent rounded-lg transition-all duration-400 ease-in-out hover:scale-105 hover:border-[#3A3AF8]  hover:bg-gradient-to-br from-blue-200 to-blue-300 '>
-         
-            <CardContent className='flex-grow'>
-             {/* Image added here */}
-        {work.w_img && <img src={work.w_img} alt={work.s_name || "Work image"} className='w-full h-48 object-cover rounded-md mb-4' />}
-            </CardContent>
-            <CardFooter className='pt-4 flex justify-end items-center'>
-              <Button variant="link" className='text-[#3A3AF8] hover:underline flex items-center space-x-2 p-0 h-auto'>
-  {/* Show More Text */}
-  <p className='text-base sm:text-lg'>Show More</p>
-  {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-6 h-6 ml-1' />}
-</Button>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+     <div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {mywork_data.map((work, index) => (
+      <Card key={index} className='p-0 flex flex-col justify-between h-full bg-blue-100 border-2 border-transparent rounded-lg overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:border-[#3A3AF8] hover:bg-gradient-to-br from-blue-200 to-blue-300 '>
+        {work.w_img && (
+          <div className="relative w-full h-full min-h-[200px]"> 
+            <img
+              src={work.w_img}
+              alt={work.s_name || "Work image"}
+              className='w-full h-full object-cover'
+            />
+          
+          </div>
+        )}
+      </Card>
+    ))}
+  </div>
+
+  {/* Single "Show More" Button for the entire section */}
+  <div className="flex justify-center mt-8"> {/* Centering the button below the grid */}
+    <Button variant="link" className='text-[#3A3AF8] hover:underline flex items-center space-x-2 p-0 h-auto text-lg sm:text-xl'>
+      <p>Show More</p>
+      {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-6 h-6 ml-1' />}
+    </Button>
+  </div>
+</div>
     </div>
   );
 };
