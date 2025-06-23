@@ -2,7 +2,41 @@ import React from 'react'
 import theme_pattern from '../../assets/theme_pattern4.png'
 import { Mail, Phone, MapPin } from "lucide-react";
 
+// ShadCN UI Imports
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea"; 
+import { Button } from "@/components/ui/button";
+
+// React Hook Form and Zod Imports
+import { useForm } from "react-hook-form"; // Import useForm
+import { z } from "zod"; // Import z from zod
+import { zodResolver } from "@hookform/resolvers/zod";
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Invalid email address." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
 const Contact = () => {
+
+    // Initialize react-hook-form
+  const form = useForm({
+    resolver: zodResolver(formSchema), // Link Zod schema with react-hook-form
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  // Define the onSubmit function
+  const onSubmit = (values) => {
+    console.log(values);
+    // Here you would typically send the form data to your backend or an API
+    alert("Form submitted! Check console for values.");
+    form.reset(); // Optionally reset the form after successful submission
+  };
   return (
    <section className="flex flex-col items-center justify-center gap-10 lg:gap-20 mt-10 mb-10 mx-5 sm:mx-10 lg:mx-[170px]">
       <div className="relative flex flex-col items-center mb-10 mt-20">
@@ -44,7 +78,79 @@ const Contact = () => {
           </div>
         </div>
 
-</div>
+
+
+   {/* Right Section: Contact Form */}
+        <div>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500 text-lg">Your Name</FormLabel> {/* Changed to gray-500 for consistency */}
+                    <FormControl>
+                      <Input
+                        placeholder="Enter your name"
+                        className="bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 py-6 text-base rounded-md focus:ring-2 focus:ring-[#3A3AF8] focus:border-transparent" // Adjusted styles for lighter theme
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500 text-lg">Your Email</FormLabel> {/* Changed to gray-500 for consistency */}
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 py-6 text-base rounded-md focus:ring-2 focus:ring-[#3A3AF8] focus:border-transparent" // Adjusted styles for lighter theme
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500 text-lg">Write your message here</FormLabel> {/* Changed to gray-500 for consistency */}
+                    <FormControl>
+                      <Textarea
+                        placeholder="Enter your message"
+                        className="bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 min-h-[150px] text-base resize-y rounded-md focus:ring-2 focus:ring-[#3A3AF8] focus:border-transparent" // Adjusted styles for lighter theme
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                className="bg-[#3A3AF8] hover:bg-[#2A2AD7] text-white text-lg px-8 py-3 rounded-md mt-6 transition-colors duration-300 w-full md:w-auto"
+              >
+                Send Message
+              </Button>
+            </form>
+          </Form>
+        </div>
+      </div>
+    
       </section>
       )
 }
