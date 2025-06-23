@@ -39,7 +39,7 @@ const MyWork = () => {
 
   {/* Single "Show More" Button for the entire section */}
   <div className="flex justify-center mt-8"> {/* Centering the button below the grid */}
-    <Button variant="outline" className='text-[#3A3AF8] hover:underline flex items-center space-x-2 p-0 h-auto text-lg sm:text-xl'>
+    <Button variant="outline"  className='flex items-center space-x-2 h-auto px-6 py-3 text-lg sm:text-xl border-2 border-[#3A3AF8] text-[#3A3AF8] bg-blue-200 hover:bg-blue-300 hover:text-[#2A2AD7] transition-colors duration-300 rounded-md'>
       <p>Show More</p>
       {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-6 h-6 ml-1' />}
     </Button>
