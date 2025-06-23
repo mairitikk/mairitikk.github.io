@@ -28,7 +28,7 @@ const MyWork = () => {
       </div>
 
      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Services_Data.map((service, index) => (
+        {mywork_data.map((work, index) => (
           <Card key={index}   className='p-6 flex flex-col justify-between h-full bg-blue-100 border-2 border-transparent rounded-lg transition-all duration-400 ease-in-out hover:scale-105 hover:border-[#3A3AF8]  hover:bg-gradient-to-br from-blue-200 to-blue-300 '>
             <CardHeader className='pb-4'>
             
