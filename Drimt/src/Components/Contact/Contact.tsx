@@ -19,23 +19,27 @@ const Contact = () => {
         <div className="space-y-8">
           <h3 className="text-5xl font-bold text-[#3A3AF8]">Let's talk</h3>
           <p className="text-gray-500 text-lg">
-            I'm currently available to take on new projects, so feel free to
-            send me a message about anything that you want me to work on.
-            You can contact anytime.
+         I'm currently excited to be available for new and challenging projects,
+  whether they lean towards frontend development, robust backend solutions,
+  or full-stack innovation. If you have a specific idea in mind or need
+  assistance in shaping your technical vision, please don't hesitate to
+  send me a message. I'm keen to collaborate and explore how I can bring
+  value to your next endeavor. You can reach out anytime, and I look forward
+  to hearing from you.
           </p>
 
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <Mail className="h-6 w-6 text-gray-500" />
-              <p className="text-gray-500 text-lg">greatstackdev@gmail.com</p>
+              <p className="text-gray-500 text-lg">mairi.tikk@gmail.com</p>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="h-6 w-6 text-gray-500" />
-              <p className="text-gray-500 text-lg">+772-825-524</p>
+              <p className="text-gray-500 text-lg">+372 58282327</p>
             </div>
             <div className="flex items-center space-x-3">
               <MapPin className="h-6 w-6 text-gray-500" />
-              <p className="text-gray-500 text-lg">CA, United States</p>
+              <p className="text-gray-500 text-lg">Germany</p>
             </div>
           </div>
         </div>
