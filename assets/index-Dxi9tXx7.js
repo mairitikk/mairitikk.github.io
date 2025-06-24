@@ -168,7 +168,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${r.do
         text-base sm:text-lg md:text-xl lg:text-2xl \r
         leading-normal sm:leading-relaxed md:leading-loose \r
         mb-8 sm:mb-10 md:mb-12          \r
-      `,children:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, tenetur possimus sapiente suscipit eos excepturi explicabo! Cupiditate nisi veritatis, distinctio rerum magnam soluta reprehenderit officiis repellat temporibus facilis, corporis sed."}),p.jsxs("div",{className:`\r
+      `,children:"I am an aspiring Full-Stack Developer with a few years of hands-on, self-directed practice in building and deploying web applications. My passion lies in bringing ideas to life through code, from crafting engaging front-end experiences to developing robust back-end solutions."}),p.jsxs("div",{className:`\r
         flex flex-col sm:flex-row     \r
         items-center gap-4 sm:gap-6 md:gap-8 \r
         text-lg sm:text-xl md:text-2xl font-medium \r
