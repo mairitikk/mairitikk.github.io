@@ -12,16 +12,20 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form"; // Import useForm
 import { z } from "zod"; // Import z from zod
 import { zodResolver } from "@hookform/resolvers/zod";
+
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Invalid email address." }),
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 });
 
+// Infer the TypeScript type directly from your Zod schema
+type ContactFormValues = z.infer<typeof formSchema>;
+
 const Contact = () => {
 
     // Initialize react-hook-form
-  const form = useForm({
+  const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema), // Link Zod schema with react-hook-form
     defaultValues: {
       name: "",
@@ -32,9 +36,10 @@ const Contact = () => {
 
   // Define the onSubmit function
   const onSubmit = (values: ContactFormValues) => {
-    console.log(values);
+    console.log("Form submitted with values:", values);
     // Here you would typically send the form data to your backend or an API
-    alert("Form submitted! Check console for values.");
+    //alert("Form submitted! Check console for values.");
+    console.log("Form submitted! Check console for values.");
     form.reset(); // Optionally reset the form after successful submission
   };
   return (
