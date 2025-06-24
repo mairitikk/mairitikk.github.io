@@ -1,6 +1,6 @@
 
 import theme_pattern from '../../assets/theme_pattern4.png'
-import Services_Data from '../../assets/services_data.js'
+import Services_Data from '../../assets/services_data.ts'
 import arrow_icon from '../../assets/arrow_icon.svg'
 import {Button} from '../navbar/button'
 import {
