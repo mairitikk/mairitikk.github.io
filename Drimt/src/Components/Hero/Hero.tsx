@@ -1,6 +1,6 @@
 
 import profile_img from '../../assets/profile_mairi.svg'
-import { Button } from '../Navbar/button'
+import { Button } from '../navbar/button'
 
 const Hero = () => {
   return (

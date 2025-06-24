@@ -31,7 +31,7 @@ const Contact = () => {
   });
 
   // Define the onSubmit function
-  const onSubmit = (values) => {
+  const onSubmit = (values: ContactFormValues) => {
     console.log(values);
     // Here you would typically send the form data to your backend or an API
     alert("Form submitted! Check console for values.");

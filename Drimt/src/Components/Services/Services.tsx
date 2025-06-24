@@ -2,7 +2,7 @@
 import theme_pattern from '../../assets/theme_pattern4.png'
 import Services_Data from '../../assets/services_data.js'
 import arrow_icon from '../../assets/arrow_icon.svg'
-import {Button} from '../Navbar/button'
+import {Button} from '../navbar/button'
 import {
   Card,
   CardAction,
@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../Services/card.tsx"
+} from "../services/card.tsx"
 
 
 

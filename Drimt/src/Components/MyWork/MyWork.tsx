@@ -2,8 +2,8 @@
 import theme_pattern from '../../assets/theme_pattern4.png'
 import mywork_data from '../../assets/mywork_data.js'
 import arrow_icon from '../../assets/arrow_icon.svg'
-import {Button} from '../Navbar/button'
-import {Card} from "../Services/card.tsx"
+import {Button} from '../navbar/button'
+import {Card} from "../services/card.tsx"
 
 
 
