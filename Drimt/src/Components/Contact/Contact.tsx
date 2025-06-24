@@ -1,4 +1,4 @@
-import React from 'react'
+
 import theme_pattern from '../../assets/theme_pattern4.png'
 import { Mail, Phone, MapPin } from "lucide-react";
 

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import profile_img from '../../assets/profile_mairi.svg'
 import { Button } from '../Navbar/button'
 

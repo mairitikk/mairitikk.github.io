@@ -1,4 +1,4 @@
-import React from 'react'
+
 import theme_pattern from '../../assets/theme_pattern4.png'
 import Services_Data from '../../assets/services_data.js'
 import arrow_icon from '../../assets/arrow_icon.svg'

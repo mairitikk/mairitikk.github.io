@@ -1,4 +1,4 @@
-import React from 'react';
+
 import drimt from '../../assets/logo2.png'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from './sheet'; 
