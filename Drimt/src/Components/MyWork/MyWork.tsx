@@ -1,9 +1,9 @@
 
 import theme_pattern from '../../assets/theme_pattern4.png'
-import mywork_data from '../../assets/mywork_data.ts'
+import mywork_data from '../../assets/mywork_data'
 import arrow_icon from '../../assets/arrow_icon.svg'
 import {Button} from '../navbar/button'
-import {Card} from "../services/card.tsx"
+import {Card} from "../services/card"
 
 
 
@@ -21,13 +21,13 @@ const MyWork = () => {
 
      <div>
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {mywork_data.map((work, index) => (
+    {mywork_data.map((work, index:number) => (
       <Card key={index} className='p-0 flex flex-col justify-between h-full bg-blue-100 border-2 border-transparent rounded-lg overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:border-[#3A3AF8] hover:bg-gradient-to-br from-blue-200 to-blue-300 '>
         {work.w_img && (
           <div className="relative w-full h-full min-h-[200px]"> 
             <img
               src={work.w_img}
-              alt={work.s_name || "Work image"}
+              alt={work.w_name || "Work image"}
               className='w-full h-full object-cover'
             />
           

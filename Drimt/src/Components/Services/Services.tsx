@@ -5,7 +5,6 @@ import arrow_icon from '../../assets/arrow_icon.svg'
 import {Button} from '../navbar/button'
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
