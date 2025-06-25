@@ -18,7 +18,9 @@ const footer = () => {
                 <div className="footer-subscribe">Subscribe</div>
             </div>
         </div>
-      
+      <hr />
+      <div className="footer-bottom"></div>
+      <p className="footer-bottom-left">&copy; 2025 Mairi Tikk. All rights reserved.</p>
     </div>
   )
 }
