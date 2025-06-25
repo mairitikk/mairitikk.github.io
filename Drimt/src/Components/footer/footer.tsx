@@ -1,5 +1,5 @@
-import footer_logo from '../../assets/footer_logo.svg'
-import user_icon from '../../assets/user_icon'
+import footer_logo from '../../assets/logo2.png'
+import user_icon from '../../assets/user_icon.svg'
 import { Input } from "@/components/ui/input"
 
 const footer = () => {
@@ -13,8 +13,9 @@ const footer = () => {
             <div className="footer-top-right">
                 <div className="footer-email-input">
                     <img src={user_icon} alt="user icon" />
-                    <Input type="email" placeholder="Email" />
+                    <Input type="email" placeholder="Enter your email" />
                 </div>
+                <div className="footer-subscribe">Subscribe</div>
             </div>
         </div>
       
