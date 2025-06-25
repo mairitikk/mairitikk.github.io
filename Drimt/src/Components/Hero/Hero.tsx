@@ -45,9 +45,7 @@ const Hero = () => {
         max-w-2xl                    
         text-base sm:text-lg md:text-xl lg:text-2xl 
         leading-normal sm:leading-relaxed md:leading-loose 
-        mb-8 sm:mb-10 md:mb-12          
-      '>
-       I am an aspiring Full-Stack Developer with a few years of hands-on, self-directed practice in building and deploying web applications. My passion lies in bringing ideas to life through code, from crafting engaging front-end experiences to developing robust back-end solutions.
+        mb-8 sm:mb-10 md:mb-12'>I am an aspiring Full-Stack Developer with a few years of hands-on, self-directed practice in building and deploying web applications. My passion lies in bringing ideas to life through code, from crafting engaging front-end experiences to developing robust back-end solutions.
       </p>
 
       {/* Buttons Container */}
