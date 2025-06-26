@@ -57,7 +57,7 @@ export function Navbar() {
 
             <NavigationMenuItem>
               <NavigationMenuLink
-                href="/projects" // Corrected href
+                href="/projects#services" // Corrected href
                 className={`${getNavLinkClass("projects")} font-chewy`} // Add font-chewy here
                 onClick={() => setMenu("projects")}
               >
