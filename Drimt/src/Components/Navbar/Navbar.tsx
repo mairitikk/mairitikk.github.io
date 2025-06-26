@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // Import useEffect
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import Link, useLocation, useNavigate
+
 import drimt from '../../assets/logo2.png';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from './sheet';
@@ -6,12 +8,55 @@ import { Button } from './button';
 import { MenuIcon } from 'lucide-react';
 
 export function Navbar() {
-  const [menu, setMenu] = useState("home"); // State to track the active menu item
+  const [menu, setMenu] = useState("home");
+  const location = useLocation(); // Hook to get current location object
+  const navigate = useNavigate(); // Hook to navigate programmatically
 
+  // Effect to update 'menu' state when URL hash changes (e.g., after initial load or direct URL access)
+  useEffect(() => {
+    const path = location.pathname.split('/')[1] || 'home'; // Get first part of path or 'home'
+    const hash = location.hash ? location.hash.substring(1) : ''; // Get hash without '#'
+
+    // Prioritize hash for active state if it exists for the current path
+    if (hash && [`about`, `services`, `portfolio`, `contact`].includes(hash)) {
+      setMenu(hash);
+    } else if (path === '') { // For '/' path, set to 'home'
+      setMenu('home');
+    } else {
+      setMenu(path);
+    }
+  }, [location]); // Re-run when location changes
+
+  // Function to handle navigation and scrolling
+  const handleNavLinkClick = (e, path, sectionId) => {
+    e.preventDefault(); // Prevent default link behavior
+
+    // Update menu state
+    setMenu(sectionId || path.substring(1) || 'home'); // Use sectionId if provided, else path
+
+    // Navigate to the new path (this updates the URL)
+    // If navigating to the same page with a different hash, use a full path string
+    if (location.pathname === path.replace(/#.*$/, '')) {
+      // If already on the page, just scroll
+      const targetElement = document.getElementById(sectionId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Fallback for cases where element might not be immediately available
+        // or for routes like /home without a specific section
+        navigate(path);
+      }
+    } else {
+      // Navigate to a new page and then scroll (useEffect will handle initial scroll)
+      navigate(path);
+    }
+    // Optionally close the mobile sheet after clicking a link
+    // const sheetCloseButton = document.querySelector('[data-state="open"] [data-radix-sheet-content] button');
+    // if (sheetCloseButton) sheetCloseButton.click();
+  };
 
   // Function to determine the active class for NavigationMenuLink
   const getNavLinkClass = (linkName) => {
-    // Combine existing styles with conditional active styles
     return `${navigationMenuTriggerStyle()} text-xl lg:text-2xl relative
             ${menu === linkName ? 'text-blue-500 font-semibold' : 'text-gray-700 hover:text-gray-900'}
             ${menu === linkName ? 'after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 after:ease-in-out' : ''}
@@ -20,15 +65,14 @@ export function Navbar() {
 
   return (
     <nav className="flex items-center justify-between p-4 border-b">
-
       <div className="flex items-center">
-        <a href="/">
+        <Link to="/">
           <img
             src={drimt}
             alt="DriMt Logo"
             className="h-20 w-auto mr-4"
           />
-        </a>
+        </Link>
       </div>
 
       <div className="hidden md:flex">
@@ -37,51 +81,51 @@ export function Navbar() {
 
             <NavigationMenuItem>
               <NavigationMenuLink
-                href="/" // Adjusted to '/' for home
-                className={getNavLinkClass("home")} // Use the helper function for classes
-                onClick={() => setMenu("home")} // Update state on click
+                asChild // Use asChild to pass props to the Link component
+                onClick={(e) => handleNavLinkClick(e, '/', 'home')}
+                className={getNavLinkClass("home")}
               >
-                Home
+                <Link to="/">Home</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
               <NavigationMenuLink
-                href="/skills" // Corrected href
-                className={getNavLinkClass("skills")}
-                onClick={() => setMenu("skills")}
-              >
-                About me
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/projects#services" // Corrected href
-                className={`${getNavLinkClass("projects")} font-chewy`} // Add font-chewy here
-                onClick={() => setMenu("projects")}
-              >
-                Services
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/about" // Corrected href
+                asChild
+                onClick={(e) => handleNavLinkClick(e, '/about#about', 'about')}
                 className={getNavLinkClass("about")}
-                onClick={() => setMenu("about")}
               >
-                Portfolio
+                <Link to="/about#about">About me</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
               <NavigationMenuLink
-                href="/contact" // Added a contact link
-                className={getNavLinkClass("contact")}
-                onClick={() => setMenu("contact")}
+                asChild
+                onClick={(e) => handleNavLinkClick(e, '/services#services', 'services')}
+                className={`${getNavLinkClass("services")} font-chewy`}
               >
-                Contact
+                <Link to="/services#services">Services</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                asChild
+                onClick={(e) => handleNavLinkClick(e, '/portfolio#portfolio', 'portfolio')}
+                className={getNavLinkClass("portfolio")}
+              >
+                <Link to="/portfolio#portfolio">Portfolio</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                asChild
+                onClick={(e) => handleNavLinkClick(e, '/contact#contact', 'contact')}
+                className={getNavLinkClass("contact")}
+              >
+                <Link to="/contact#contact">Contact</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
@@ -103,7 +147,7 @@ export function Navbar() {
         </Button>
       </div>
 
-
+      {/* Mobile Menu */}
       <div className="md:hidden">
         <Sheet>
           <SheetTrigger asChild>
@@ -112,52 +156,61 @@ export function Navbar() {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full max-w-xs"> {/* Adjusted max-w for mobile menu */}
+          <SheetContent side="right" className="w-full max-w-xs">
             <div className="flex flex-col gap-4 py-6">
-              <a href="/" className="mb-4">
+              <Link to="/" onClick={() => setMenu('home')} className="mb-4">
                 <img
                   src={drimt}
                   alt="DriMt Logo"
                   className="h-16 w-auto mx-auto"
                 />
-              </a>
+              </Link>
               <NavigationMenu className="flex flex-col">
                 <NavigationMenuList className="flex flex-col gap-2">
                   <NavigationMenuItem>
-                    {/* For mobile, you might choose to apply active styles or not have underlines */}
                     <NavigationMenuLink
-                      href="/"
+                      asChild
+                      onClick={(e) => handleNavLinkClick(e, '/', 'home')}
                       className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'home' ? 'text-blue-500 font-semibold' : ''}`}
-                      onClick={() => setMenu("home")}
-                    >Home</NavigationMenuLink>
+                    >
+                      <Link to="/">Home</Link>
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
-                      href="/skills"
-                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'skills' ? 'text-blue-500 font-semibold' : ''}`}
-                      onClick={() => setMenu("skills")}
-                    >Skills</NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink
-                      href="/projects"
-                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'projects' ? 'text-blue-500 font-semibold' : ''}`}
-                      onClick={() => setMenu("projects")}
-                    >Projects</NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink
-                      href="/about"
+                      asChild
+                      onClick={(e) => handleNavLinkClick(e, '/about#about', 'about')}
                       className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'about' ? 'text-blue-500 font-semibold' : ''}`}
-                      onClick={() => setMenu("about")}
-                    >About me</NavigationMenuLink>
+                    >
+                      <Link to="/about#about">About me</Link>
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink
-                      href="/contact"
+                      asChild
+                      onClick={(e) => handleNavLinkClick(e, '/services#services', 'services')}
+                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'services' ? 'text-blue-500 font-semibold' : ''}`}
+                    >
+                      <Link to="/services#services">Services</Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      asChild
+                      onClick={(e) => handleNavLinkClick(e, '/portfolio#portfolio', 'portfolio')}
+                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'portfolio' ? 'text-blue-500 font-semibold' : ''}`}
+                    >
+                      <Link to="/portfolio#portfolio">Portfolio</Link>
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuLink
+                      asChild
+                      onClick={(e) => handleNavLinkClick(e, '/contact#contact', 'contact')}
                       className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'contact' ? 'text-blue-500 font-semibold' : ''}`}
-                      onClick={() => setMenu("contact")}
-                    >Contact</NavigationMenuLink>
+                    >
+                      <Link to="/contact#contact">Contact</Link>
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
