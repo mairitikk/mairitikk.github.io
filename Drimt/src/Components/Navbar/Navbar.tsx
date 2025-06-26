@@ -7,6 +7,7 @@ import { MenuIcon } from 'lucide-react';
 
 export function Navbar() {
   const [menu, setMenu] = useState("home"); // State to track the active menu item
+  
 
   // Function to determine the active class for NavigationMenuLink
   const getNavLinkClass = (linkName) => {
