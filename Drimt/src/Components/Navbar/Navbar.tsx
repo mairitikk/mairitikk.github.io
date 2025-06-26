@@ -1,16 +1,27 @@
-
-import drimt from '../../assets/logo2.png'
+import React, { useState } from 'react';
+import drimt from '../../assets/logo2.png';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './navigation-menu';
-import { Sheet, SheetContent, SheetTrigger } from './sheet'; 
-import { Button } from './button'; 
-import { MenuIcon } from 'lucide-react'; 
+import { Sheet, SheetContent, SheetTrigger } from './sheet';
+import { Button } from './button';
+import { MenuIcon } from 'lucide-react';
 
 export function Navbar() {
+  const [menu, setMenu] = useState("home"); // State to track the active menu item
+
+  // Function to determine the active class for NavigationMenuLink
+  const getNavLinkClass = (linkName) => {
+    // Combine existing styles with conditional active styles
+    return `${navigationMenuTriggerStyle()} text-xl lg:text-2xl relative
+            ${menu === linkName ? 'text-blue-500 font-semibold' : 'text-gray-700 hover:text-gray-900'}
+            ${menu === linkName ? 'after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 after:ease-in-out' : ''}
+    `;
+  };
+
   return (
-    <nav className="flex items-center justify-between p-4 border-b ">
-     
+    <nav className="flex items-center justify-between p-4 border-b">
+
       <div className="flex items-center">
-        <a href="/"> 
+        <a href="/">
           <img
             src={drimt}
             alt="DriMt Logo"
@@ -19,49 +30,80 @@ export function Navbar() {
         </a>
       </div>
 
-     <div className="hidden md:flex">
-  <NavigationMenu>
-    <NavigationMenuList className="flex space-x-4">
-      <NavigationMenuItem>
-        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl`}>
-          Home
-        </NavigationMenuLink>
-      </NavigationMenuItem>
-      <NavigationMenuItem>
-        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl`}>
-          Skills
-        </NavigationMenuLink>
-      </NavigationMenuItem>
-      <NavigationMenuItem>
-        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl font-chewy`}>
-          Projects
-        </NavigationMenuLink>
-      </NavigationMenuItem>
-      <NavigationMenuItem>
-        <NavigationMenuLink href="/home" className={`${navigationMenuTriggerStyle()} text-xl lg:text-2xl`}>
-          About me
-        </NavigationMenuLink>
-      </NavigationMenuItem>
-    </NavigationMenuList>
-  </NavigationMenu>
-  <Button
-    variant="outline"
-    className="
-      px-10 py-5 rounded-full
-      bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8]
-      text-white
-      hover:text-[#3A3AF8]
-      border-none
-      text-[18px] /* Consider making this responsive too, e.g., text-lg lg:text-xl */
-      cursor-pointer
-    "
-  >
-    Connect with me
-  </Button>
-</div>
+      <div className="hidden md:flex">
+        <NavigationMenu>
+          <NavigationMenuList className="flex space-x-4">
 
-     
-      <div className="md:hidden"> 
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/" // Adjusted to '/' for home
+                className={getNavLinkClass("home")} // Use the helper function for classes
+                onClick={() => setMenu("home")} // Update state on click
+              >
+                Home
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/skills" // Corrected href
+                className={getNavLinkClass("skills")}
+                onClick={() => setMenu("skills")}
+              >
+                Skills
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/projects" // Corrected href
+                className={`${getNavLinkClass("projects")} font-chewy`} // Add font-chewy here
+                onClick={() => setMenu("projects")}
+              >
+                Projects
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/about" // Corrected href
+                className={getNavLinkClass("about")}
+                onClick={() => setMenu("about")}
+              >
+                About me
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href="/contact" // Added a contact link
+                className={getNavLinkClass("contact")}
+                onClick={() => setMenu("contact")}
+              >
+                Contact
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+          </NavigationMenuList>
+        </NavigationMenu>
+        <Button
+          variant="outline"
+          className="
+            px-10 py-5 rounded-full
+            bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8]
+            text-white
+            hover:text-[#3A3AF8] hover:from-[#3A3AF8] hover:to-[#EBEFF5] transition-all duration-300
+            border-none
+            text-[18px]
+            cursor-pointer
+          "
+        >
+          Connect with me
+        </Button>
+      </div>
+
+
+      <div className="md:hidden">
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
@@ -69,32 +111,52 @@ export function Navbar() {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-full max-w-full sm:max-w-full">
+          <SheetContent side="right" className="w-full max-w-xs"> {/* Adjusted max-w for mobile menu */}
             <div className="flex flex-col gap-4 py-6">
-              {/* Optional: Re-add logo at the top of the mobile menu */}
               <a href="/" className="mb-4">
                 <img
                   src={drimt}
                   alt="DriMt Logo"
-                  className="h-16 w-auto mx-auto" // Center logo in mobile menu
+                  className="h-16 w-auto mx-auto"
                 />
               </a>
-              <NavigationMenu className="flex flex-col"> {/* Adjust menu for vertical stacking */}
-                <NavigationMenuList className="flex flex-col gap-2"> {/* Stack items vertically */}
+              <NavigationMenu className="flex flex-col">
+                <NavigationMenuList className="flex flex-col gap-2">
                   <NavigationMenuItem>
-                    <NavigationMenuLink href="/home" className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
+                    {/* For mobile, you might choose to apply active styles or not have underlines */}
+                    <NavigationMenuLink
+                      href="/"
+                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'home' ? 'text-blue-500 font-semibold' : ''}`}
+                      onClick={() => setMenu("home")}
+                    >Home</NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuLink href="/skills" className={navigationMenuTriggerStyle()}>Skills</NavigationMenuLink>
+                    <NavigationMenuLink
+                      href="/skills"
+                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'skills' ? 'text-blue-500 font-semibold' : ''}`}
+                      onClick={() => setMenu("skills")}
+                    >Skills</NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuLink href="/projects" className={navigationMenuTriggerStyle()}>Projects</NavigationMenuLink>
+                    <NavigationMenuLink
+                      href="/projects"
+                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'projects' ? 'text-blue-500 font-semibold' : ''}`}
+                      onClick={() => setMenu("projects")}
+                    >Projects</NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuLink href="/about" className={navigationMenuTriggerStyle()}>About me</NavigationMenuLink>
+                    <NavigationMenuLink
+                      href="/about"
+                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'about' ? 'text-blue-500 font-semibold' : ''}`}
+                      onClick={() => setMenu("about")}
+                    >About me</NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuLink href="/contact" className={navigationMenuTriggerStyle()}>Contact</NavigationMenuLink>
+                    <NavigationMenuLink
+                      href="/contact"
+                      className={`${navigationMenuTriggerStyle()} w-full justify-start ${menu === 'contact' ? 'text-blue-500 font-semibold' : ''}`}
+                      onClick={() => setMenu("contact")}
+                    >Contact</NavigationMenuLink>
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
