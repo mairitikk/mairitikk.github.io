@@ -4,7 +4,7 @@ import { Button } from '../navbar/button'
 
 const Hero = () => {
   return (
-    <div className='
+    <div id="home" className='
       flex flex-col items-center gap-6  
       px-4 sm:px-6 md:px-8 lg:px-12    
       text-center                    

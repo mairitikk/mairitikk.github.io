@@ -7,7 +7,7 @@ import { MenuIcon } from 'lucide-react';
 
 export function Navbar() {
   const [menu, setMenu] = useState("home"); // State to track the active menu item
-  
+
 
   // Function to determine the active class for NavigationMenuLink
   const getNavLinkClass = (linkName) => {
@@ -51,7 +51,7 @@ export function Navbar() {
                 className={getNavLinkClass("skills")}
                 onClick={() => setMenu("skills")}
               >
-                Skills
+                About me
               </NavigationMenuLink>
             </NavigationMenuItem>
 
@@ -61,7 +61,7 @@ export function Navbar() {
                 className={`${getNavLinkClass("projects")} font-chewy`} // Add font-chewy here
                 onClick={() => setMenu("projects")}
               >
-                Projects
+                Services
               </NavigationMenuLink>
             </NavigationMenuItem>
 
@@ -71,7 +71,7 @@ export function Navbar() {
                 className={getNavLinkClass("about")}
                 onClick={() => setMenu("about")}
               >
-                About me
+                Portfolio
               </NavigationMenuLink>
             </NavigationMenuItem>
 
