@@ -9,13 +9,13 @@ import { MenuIcon } from 'lucide-react';
 
 export function Navbar() {
   const [menu, setMenu] = useState("home");
-  const location = useLocation(); // Hook to get current location object
-  const navigate = useNavigate(); // Hook to navigate programmatically
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
 
-  // Effect to update 'menu' state when URL hash changes (e.g., after initial load or direct URL access)
+ 
   useEffect(() => {
-    const path = location.pathname.split('/')[1] || 'home'; // Get first part of path or 'home'
-    const hash = location.hash ? location.hash.substring(1) : ''; // Get hash without '#'
+    const path = location.pathname.split('/')[1] || 'home'; 
+    const hash = location.hash ? location.hash.substring(1) : '';
 
     // Prioritize hash for active state if it exists for the current path
     if (hash && [`about`, `services`, `portfolio`, `contact`].includes(hash)) {

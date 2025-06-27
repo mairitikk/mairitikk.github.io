@@ -26,7 +26,7 @@ const Contact = () => {
 
     // Initialize react-hook-form
   const form = useForm<ContactFormValues>({
-    resolver: zodResolver(formSchema), // Link Zod schema with react-hook-form
+    resolver: zodResolver(formSchema), 
     defaultValues: {
       name: "",
       email: "",
@@ -37,10 +37,9 @@ const Contact = () => {
   // Define the onSubmit function
   const onSubmit = (values: ContactFormValues) => {
     console.log("Form submitted with values:", values);
-    // Here you would typically send the form data to your backend or an API
-    //alert("Form submitted! Check console for values.");
+
     console.log("Form submitted! Check console for values.");
-    form.reset(); // Optionally reset the form after successful submission
+    form.reset();
   };
   return (
    <section  id="contact" className="flex flex-col items-center justify-center gap-10 lg:gap-20 mt-10 mb-10 mx-5 sm:mx-10 lg:mx-[170px]">
