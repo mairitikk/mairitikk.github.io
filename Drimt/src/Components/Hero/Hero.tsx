@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom'; // Only useNavigate is needed for programmatic navigation
 import profile_img from '../../assets/profile_mairi.svg';
 import { Button } from '../navbar/button'; // Assuming this path is correct
@@ -96,10 +96,10 @@ const Hero = () => {
           Connect with me
         </Button>
 
-        {/* My resume button: Goes to /portfolio#portfolio (assuming MyWork is your portfolio) */}
+        {/* My resume button: Goes to /portfolio#portfolio */}
         <Button
           variant="outline"
-          onClick={(e) => handleButtonClick(e, '/portfolio', 'portfolio')} // Call handler for portfolio
+          onClick={(e) => handleButtonClick(e, '/portfolio', 'portfolio')} 
           className='
             chewy-regular
             px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5
