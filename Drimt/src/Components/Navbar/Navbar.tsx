@@ -1,62 +1,50 @@
-import React, { useState, useEffect } from 'react'; // Import useEffect
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import Link, useLocation, useNavigate
-
+import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import drimt from '../../assets/logo2.png';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from './navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from './sheet';
 import { Button } from './button';
 import { MenuIcon } from 'lucide-react';
 
+
 export function Navbar() {
   const [menu, setMenu] = useState("home");
-  const location = useLocation(); 
-  const navigate = useNavigate(); 
+  const location = useLocation();
+  const navigate = useNavigate();
 
- 
   useEffect(() => {
-    const path = location.pathname.split('/')[1] || 'home'; 
+    const path = location.pathname.split('/')[1] || 'home';
     const hash = location.hash ? location.hash.substring(1) : '';
 
-    // Prioritize hash for active state if it exists for the current path
     if (hash && [`about`, `services`, `portfolio`, `contact`].includes(hash)) {
       setMenu(hash);
-    } else if (path === '') { // For '/' path, set to 'home'
+    } else if (path === '') {
       setMenu('home');
     } else {
       setMenu(path);
     }
-  }, [location]); // Re-run when location changes
+  }, [location]);
 
   // Function to handle navigation and scrolling
-  const handleNavLinkClick = (e, path, sectionId) => {
-    e.preventDefault(); // Prevent default link behavior
+  const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, path: string, sectionId: string) => {
+    e.preventDefault();
 
-    // Update menu state
-    setMenu(sectionId || path.substring(1) || 'home'); // Use sectionId if provided, else path
+    setMenu(sectionId || path.substring(1) || 'home');
 
-    // Navigate to the new path (this updates the URL)
-    // If navigating to the same page with a different hash, use a full path string
     if (location.pathname === path.replace(/#.*$/, '')) {
-      // If already on the page, just scroll
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
       } else {
-        // Fallback for cases where element might not be immediately available
-        // or for routes like /home without a specific section
         navigate(path);
       }
     } else {
-      // Navigate to a new page and then scroll (useEffect will handle initial scroll)
       navigate(path);
     }
-    // Optionally close the mobile sheet after clicking a link
-    // const sheetCloseButton = document.querySelector('[data-state="open"] [data-radix-sheet-content] button');
-    // if (sheetCloseButton) sheetCloseButton.click();
   };
 
   // Function to determine the active class for NavigationMenuLink
-  const getNavLinkClass = (linkName) => {
+  const getNavLinkClass = (linkName: string) => {
     return `${navigationMenuTriggerStyle()} text-xl lg:text-2xl relative
             ${menu === linkName ? 'text-blue-500 font-semibold' : 'text-gray-700 hover:text-gray-900'}
             ${menu === linkName ? 'after:content-[""] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-blue-500 after:transition-all after:duration-300 after:ease-in-out' : ''}
@@ -81,7 +69,7 @@ export function Navbar() {
 
             <NavigationMenuItem>
               <NavigationMenuLink
-                asChild // Use asChild to pass props to the Link component
+                asChild
                 onClick={(e) => handleNavLinkClick(e, '/', 'home')}
                 className={getNavLinkClass("home")}
               >
@@ -133,7 +121,7 @@ export function Navbar() {
         </NavigationMenu>
         <Button
           variant="outline"
-           onClick={(e) => handleNavLinkClick(e, '/contact#contact', 'contact')}
+          onClick={(e) => handleNavLinkClick(e, '/contact#contact', 'contact')}
           className="
             px-10 py-5 rounded-full
             bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8]

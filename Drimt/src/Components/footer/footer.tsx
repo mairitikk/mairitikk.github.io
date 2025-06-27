@@ -1,7 +1,7 @@
 import footer_logo from '../../assets/logo2.png';
 import user_icon from '../../assets/user_icon.svg';
 import { Input } from "@/components/ui/input";
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
+import { Form, FormField, FormItem, FormControl} from "@/components/ui/form";
 import { useForm } from 'react-hook-form'; // Import useForm
 import { zodResolver } from '@hookform/resolvers/zod'; // For Zod validation
 import * as z from 'zod'; // For Zod schema
