@@ -133,6 +133,7 @@ export function Navbar() {
         </NavigationMenu>
         <Button
           variant="outline"
+           onClick={(e) => handleNavLinkClick(e, '/contact#contact', 'contact')}
           className="
             px-10 py-5 rounded-full
             bg-gradient-to-r from-[#EBEFF5] to-[#3A3AF8]
