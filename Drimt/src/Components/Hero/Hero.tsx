@@ -1,5 +1,5 @@
 
-import { useNavigate } from 'react-router-dom'; on
+import { useNavigate } from 'react-router-dom';
 import profile_img from '../../assets/profile_mairi.svg';
 import { Button } from '../navbar/button'; 
 
