@@ -1,21 +1,21 @@
 
-import { useNavigate } from 'react-router-dom'; // Only useNavigate is needed for programmatic navigation
+import { useNavigate } from 'react-router-dom'; on
 import profile_img from '../../assets/profile_mairi.svg';
-import { Button } from '../navbar/button'; // Assuming this path is correct
+import { Button } from '../navbar/button'; 
 
 const Hero = () => {
   const navigate = useNavigate();
 
-  // Function to handle navigation and scrolling for both buttons
-  const handleButtonClick = (e, path, sectionId) => {
-    e.preventDefault(); // Prevent default button behavior
+ 
+ const handleButtonClick = (
+    e: React.MouseEvent<HTMLButtonElement>, 
+    path: string,                         
+    sectionId: string                    
+  ) => {
+    e.preventDefault();
 
-    // Navigate to the new path with the hash
     navigate(`${path}#${sectionId}`);
 
-    // After navigation, attempt to scroll to the element.
-    // A small delay is crucial as the target component/element
-    // might not be in the DOM immediately after the route change.
     setTimeout(() => {
       const targetElement = document.getElementById(sectionId);
       if (targetElement) {
@@ -23,7 +23,7 @@ const Hero = () => {
       } else {
         console.warn(`Element with ID '${sectionId}' not found for scrolling.`);
       }
-    }, 100); // Adjust delay if scrolling is inconsistent
+    }, 100); 
   };
 
 
