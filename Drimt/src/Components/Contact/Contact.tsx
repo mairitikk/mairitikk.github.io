@@ -23,7 +23,8 @@ const formSchema = z.object({
 type ContactFormValues = z.infer<typeof formSchema>;
 
 const Contact = () => {
-
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null); 
+  const [isSubmitting, setIsSubmitting] = useState(false); 
     // Initialize react-hook-form
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema), 
@@ -39,7 +40,7 @@ const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "1ac685af-0c96-4e99-a171-db6e07d2db93");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
