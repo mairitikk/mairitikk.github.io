@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // <--- Make sure this line is present
+import { useState } from 'react'; // <--- Make sure this line is present
 import theme_pattern from '../../assets/theme_pattern4.png'
 import { Mail, Phone, MapPin } from "lucide-react";
 
@@ -50,7 +50,7 @@ const Contact = () => {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData, // Send FormData directly
-        // No need for "Content-Type" header when sending FormData
+       
       });
 
       const data = await res.json(); // Parse the response JSON
