@@ -36,9 +36,12 @@ const Contact = () => {
   });
 
   // Define the onSubmit function
-const onSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
+ const onSubmit = async (values: ContactFormValues) => { 
+    setSubmitStatus(null); // Clear previous status
+    setIsSubmitting(true); // Disable button
+    setSubmitStatus("Sending message...");
+    
+    const formData = new FormData();
 
     formData.append("access_key", "1ac685af-0c96-4e99-a171-db6e07d2db93");
 
