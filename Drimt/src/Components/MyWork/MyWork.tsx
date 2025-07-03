@@ -28,7 +28,7 @@ const MyWork = () => {
             <img
               src={work.w_img}
               alt={work.w_name || "Work image"}
-              className='w-full h-full object-cover'
+              className='w-full h-full object-contain'
             />
           
           </div>
