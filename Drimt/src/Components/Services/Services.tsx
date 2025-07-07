@@ -45,13 +45,13 @@ const Services = () => {
                 {service.s_desc}
               </p>
             </CardContent>
-            <CardFooter className='pt-4 flex justify-end items-center'>
+           {/* <CardFooter className='pt-4 flex justify-end items-center'>
               <Button variant="link" className='text-[#3A3AF8] hover:underline flex items-center space-x-2 p-0 h-auto'>
-  {/* Read More Text */}
+
   <p className='text-base sm:text-lg'>Read More</p>
   {arrow_icon && <img src={arrow_icon} alt="Arrow Icon" className='w-6 h-6 ml-1' />}
 </Button>
-            </CardFooter>
+            </CardFooter>*/}
           </Card>
         ))}
       </div>
