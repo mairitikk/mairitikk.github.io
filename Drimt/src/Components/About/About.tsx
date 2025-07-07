@@ -28,17 +28,17 @@ const About = () => {
 
           <div className="flex flex-col gap-4 lg:gap-5">
   <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
-    <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>HTML & CSS</p>
+    <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>JavaScript</p>
   
     <hr className="outline-none border-none h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8] w-1/2 sm:w-[50%]" />
   </div>
   <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
-    <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>React JS</p>
+    <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>HTML & CSS</p>
     
     <hr className="outline-none border-none h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8] w-[70%] sm:w-[70%]" />
   </div>
   <div className="flex gap-4 items-center transition-all duration-300 hover:scale-105">
-    <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>JavaScript</p>
+    <p className='min-w-[100px] sm:min-w-[150px] text-lg sm:text-xl lg:text-2xl font-medium'>React JS</p>
   
     <hr className="outline-none border-none h-2 rounded-full bg-gradient-to-l from-[#EBEFF5] to-[#3A3AF8] w-[60%] sm:w-[60%]" />
   </div>
@@ -53,19 +53,19 @@ const About = () => {
 
       <div className="flex flex-col sm:flex-row w-full justify-around gap-10 sm:gap-4 lg:mb-20">
         <div className="flex flex-col items-center gap-[5px] sm:gap-[10px] transition-all duration-500 hover:scale-110 sm:hover:scale-112">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-logo2">10+</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-logo2">2+</h1>
           <p className='text-base sm:text-lg lg:text-[22px] font-medium text-center'>YEARS OF EXPERIENCE</p>
         </div>
         
         <hr className="hidden sm:block h-20 w-[1px] bg-gray-300" />
         <div className="flex flex-col items-center gap-[5px] sm:gap-[10px] transition-all duration-500 hover:scale-110 sm:hover:scale-112">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-logo2">90+</h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-logo2">5+</h1>
           <p className='text-base sm:text-lg lg:text-[22px] font-medium text-center'>PROJECTS COMPLETED</p>
         </div>
         <hr className="hidden sm:block h-20 w-[1px] bg-gray-300" />
         <div className="flex flex-col items-center gap-[5px] sm:gap-[10px] transition-all duration-500 hover:scale-110 sm:hover:scale-112">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-logo2">15+</h1>
-          <p className='text-base sm:text-lg lg:text-[22px] font-medium text-center'>HAPPY CLIENTS</p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient-logo2">5+</h1>
+          <p className='text-base sm:text-lg lg:text-[22px] font-medium text-center'>TECHNOLOGIES MASTERED</p>
         </div>
       </div>
     </div>
