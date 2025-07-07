@@ -7,13 +7,15 @@ const Services_Data = [
   },
   {
     s_no: "02",
-    s_name: "Graphics design",
-    s_desc: "Web development is the process of building, programming...",
+    s_name: "Front-End Development",
+    s_desc:
+      "Crafting intuitive and engaging user interfaces (UI) and user experiences (UX) using modern frameworks for optimal responsiveness.",
   },
   {
     s_no: "03",
-    s_name: "Social media",
-    s_desc: "Web development is the process of building, programming...",
+    s_name: "Back-End Development & APIs",
+    s_desc:
+      "Building robust and scalable server-side applications, databases, and APIs to power dynamic web functionalities.",
   },
   {
     s_no: "04",
