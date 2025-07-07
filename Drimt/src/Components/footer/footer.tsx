@@ -88,18 +88,18 @@ const Footer = () => {
       <hr className="border-t border-gray-700 my-8" />
 
       {/* Footer Bottom Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <div className="flex justify-center">
         {/* Footer Bottom Left - Copyright */}
-        <p className="text-center md:text-left">
+        <p >
           &copy; {new Date().getFullYear()} Mairi Tikk. All rights reserved.
         </p>
 
-        {/* Footer Bottom Right - Links */}
+        {/* Footer Bottom Right - Links 
         <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
           <p className="hover:text-white cursor-pointer transition-colors duration-200">Term of Services</p>
           <p className="hover:text-white cursor-pointer transition-colors duration-200">Privacy Policy</p>
           <p className="hover:text-white cursor-pointer transition-colors duration-200">Connect with me</p>
-        </div>
+        </div>*/}
       </div>
     </footer>
   );
