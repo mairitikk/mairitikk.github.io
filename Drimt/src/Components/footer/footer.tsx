@@ -7,7 +7,6 @@ import { zodResolver } from '@hookform/resolvers/zod'; // For Zod validation
 import * as z from 'zod'; // For Zod schema
 
 // --- Define your Zod schema for the email input ---
-// This schema describes the shape and validation rules for your form data
 const formSchema = z.object({
   email: z.string().email({
     message: "Enter a valid email address.",
@@ -25,17 +24,39 @@ const Footer = () => {
 
   // --- Define your onSubmit function ---
   // This function will be called when the form is submitted
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log("Email submitted:", values.email);
-    // Here you would typically send the email to your backend or an email service
-    // e.g., using an API call (axios, fetch)
-    // After submission, you might want to reset the form:
-    // form.reset();
+
+    try {
+      // 1. Send the email data to your backend API endpoint
+      // This endpoint will handle the actual email sending
+      const response = await fetch('/api/subscribe', { // <-- Define this API route in your Next.js project
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: values.email }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Subscription successful:", data.message);
+        alert("Thank you for subscribing! You'll receive a confirmation email shortly.");
+        form.reset(); // Clear the form after successful submission
+      } else {
+        const errorData = await response.json();
+        console.error("Subscription failed:", errorData.message);
+        alert(`Failed to subscribe: ${errorData.message || 'An unknown error occurred.'}`);
+      }
+    } catch (error) {
+      console.error("Error during subscription:", error);
+      alert("There was an error processing your subscription. Please try again later.");
+    }
   }
 
   return (
     // Main container for the entire footer
-     <footer className=" py-10 px-4 md:px-8 lg:px-16">
+    <footer className=" py-10 px-4 md:px-8 lg:px-16">
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
         <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
           <img src={footer_logo} alt="footer logo" className="h-10 w-auto" />
@@ -49,38 +70,33 @@ const Footer = () => {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem className="flex-grow"> {/* flex-grow ensures FormItem takes available space */}
-                    {/* Hiding the label for a compact footer look. If you need it, uncomment and style appropriately. */}
-                    {/* <FormLabel className="sr-only">Your Email</FormLabel> */}
+                  <FormItem className="flex-grow">
                     <FormControl>
-                      <div className="relative flex items-center w-full"> {/* Wrapper for icon and input */}
-                         {/* This assumes user_icon is a static part of the input design,
-                             if you want it IN the input, you might need to adjust shadcn's Input or use a custom one.
-                             For now, let's put it next to the input if desired,
-                             or remove it if the new input style doesn't accommodate it naturally. */}
-                         <img src={user_icon} alt="user icon" className="absolute left-3 h-5 w-5 text-gray-400 z-10" />
-                         <Input
+                      <div className="relative flex items-center w-full">
+                        <img src={user_icon} alt="user icon" className="absolute left-3 h-5 w-5 text-gray-400 z-10" />
+                        <Input
                           type="email"
                           placeholder="Enter your email"
                           className="pl-10 bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 py-6 text-base rounded-md focus:ring-2 focus:ring-[#3A3AF8] focus:border-transparent w-full"
                           {...field}
-                         />
+                        />
                       </div>
                     </FormControl>
-                    {/* You can add FormMessage here if you want validation errors to show below */}
+                    {/* Uncomment if you want to show validation errors below the input */}
                     {/* <FormMessage /> */}
                   </FormItem>
                 )}
               />
               {/* Subscribe Button */}
               <button
-                type="submit" 
+                type="submit"
                 className="bg-[#3A3AF8] hover:bg-[#2A2AD7] text-white font-semibold py-2 px-6 rounded-md transition-colors duration-300 whitespace-nowrap"
+                disabled={form.formState.isSubmitting} // Disable button while submitting
               >
-                Subscribe
+                {form.formState.isSubmitting ? "Subscribing..." : "Subscribe"}
               </button>
             </form>
-          </Form> {/* Closing Form provider */}
+          </Form>
         </div>
       </div>
 
@@ -90,16 +106,9 @@ const Footer = () => {
       {/* Footer Bottom Section */}
       <div className="flex justify-center">
         {/* Footer Bottom Left - Copyright */}
-        <p >
+        <p>
           &copy; {new Date().getFullYear()} Mairi Tikk. All rights reserved.
         </p>
-
-        {/* Footer Bottom Right - Links 
-        <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
-          <p className="hover:text-white cursor-pointer transition-colors duration-200">Term of Services</p>
-          <p className="hover:text-white cursor-pointer transition-colors duration-200">Privacy Policy</p>
-          <p className="hover:text-white cursor-pointer transition-colors duration-200">Connect with me</p>
-        </div>*/}
       </div>
     </footer>
   );
