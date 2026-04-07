@@ -24,13 +24,22 @@ const MyWork = () => {
     {mywork_data.map((work, index:number) => (
       <Card key={index} className='p-0 flex flex-col justify-between h-full bg-blue-100 border-2 border-transparent rounded-lg overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:border-[#3A3AF8] hover:bg-gradient-to-br from-blue-200 to-blue-300 '>
         {work.w_img && (
-          <div className="relative w-full h-full min-h-[200px]"> 
-            <img
-              src={work.w_img}
-              alt={work.w_name || "Work image"}
-              className='w-full h-full object-contain'
-            />
-          
+          <div className="relative w-full h-full min-h-[200px]">
+            {work.w_url ? (
+              <a href={work.w_url} target="_blank" rel="noopener noreferrer" className="w-full h-full block">
+                <img
+                  src={work.w_img}
+                  alt={work.w_name || "Work image"}
+                  className='w-full h-full object-contain cursor-pointer'
+                />
+              </a>
+            ) : (
+              <img
+                src={work.w_img}
+                alt={work.w_name || "Work image"}
+                className='w-full h-full object-contain'
+              />
+            )}
           </div>
         )}
       </Card>
